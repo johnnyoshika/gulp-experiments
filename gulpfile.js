@@ -8,6 +8,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
+var browserSync = require('browser-sync');
 
 gulp.task('default', ['watch']);
 
@@ -23,8 +24,8 @@ gulp.task('less', function () {
     .pipe(less({
         paths: [path.join(__dirname, 'less', 'includes')]
     }))
-    .pipe(sourcemaps.write('/'))
-    .pipe(gulp.dest('css/'));
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('app/css/'));
 });
 
 gulp.task('js', function () {
@@ -36,5 +37,22 @@ gulp.task('js', function () {
      .pipe(babel())
      .pipe(concat('app.js'))
      .pipe(sourcemaps.write('.'))
-     .pipe(gulp.dest('build'));
+     .pipe(gulp.dest('app/js'));
+});
+
+gulp.task('browser-sync', function () {
+   var files = [
+      'app/**/*.html',
+      'app/css/**/*.css',
+      'app/imgs/**/*.png',
+      'app/js/**/*.js'
+   ];
+
+   browserSync.init(files, {
+      server: {
+         baseDir: './app'
+      }
+   });
+   gulp.watch('css/**/*.less', ['less']);
+   gulp.watch('js/**/*.js', ['js']);
 });

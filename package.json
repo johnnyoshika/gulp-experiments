@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
+    "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-bower": "0.0.10",

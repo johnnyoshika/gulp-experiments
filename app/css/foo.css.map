@@ -1,0 +1,1 @@
+{"version":3,"sources":["foo.less"],"names":[],"mappings":"AAAA;EAAQ,aAAA;EAAe,UAAA;;AACvB;EACE,aAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,aAAA","file":"foo.css","sourcesContent":[".hello {color: orange; font:10px;}\n.box {\n  height:200px;\n  background:orange;\n  padding:30px;\n  border-radius:20px;\n  display:none;\n}\n"],"sourceRoot":"/source/"}
