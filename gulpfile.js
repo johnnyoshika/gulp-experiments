@@ -40,7 +40,7 @@ gulp.task('js', function () {
      .pipe(gulp.dest('app/js'));
 });
 
-gulp.task('browser-sync', ['watch'], function () {
+gulp.task('serve', ['watch'], function () {
    var files = [
       'app/**/*.html',
       'app/css/**/*.css',
@@ -55,7 +55,7 @@ gulp.task('browser-sync', ['watch'], function () {
    });
 });
 
-gulp.task('browser-sync-bcjobs', function () {
+gulp.task('serve-bcjobs', function () {
    browserSync.init({
      proxy: 'http://www.bcjobs.local'
    });
